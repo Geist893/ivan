@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Mi Hermano IVAN 💙</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+overflow:hidden;
+background:#000;
+}
+
+/* UNIVERSO */
+
+.universe{
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, rgba(0,162,255,.25), transparent 30%),
+radial-gradient(circle at 80% 70%, rgba(144,0,255,.25), transparent 30%),
+radial-gradient(circle at center, #08112c, #020617, #000);
+}
+
+/* ESTRELLAS */
+
+.star{
+position:absolute;
+background:white;
+border-radius:50%;
+animation:twinkle 4s infinite;
+}
+
+@keyframes twinkle{
+50%{
+opacity:.2;
+}
+}
+
+/* PORTADA */
+
+.cover{
+position:absolute;
+inset:0;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+color:white;
+z-index:20;
+backdrop-filter:blur(4px);
+text-align:center;
+padding:20px;
+}
+
+.cover h1{
+font-size:4rem;
+margin-bottom:20px;
+text-shadow:0 0 30px #fff;
+animation:glow 2s infinite alternate;
+}
+
+@keyframes glow{
+from{
+text-shadow:0 0 20px #fff;
+}
+to{
+text-shadow:0 0 50px #00d4ff;
+}
+}
+
+.cover p{
+max-width:900px;
+font-size:1.3rem;
+line-height:1.8;
+}
+
+/* REGALO */
+
+.gift{
+width:180px;
+height:180px;
+position:relative;
+cursor:pointer;
+margin-top:40px;
+animation:float 3s ease-in-out infinite;
+}
+
+.box{
+width:180px;
+height:180px;
+background:linear-gradient(45deg,#2196f3,#6ec6ff);
+border-radius:15px;
+box-shadow:0 0 60px #2196f3;
+}
+
+.lid{
+position:absolute;
+top:-20px;
+width:180px;
+height:40px;
+background:#9adfff;
+border-radius:15px;
+transition:1.5s;
+}
+
+.ribbon-v{
+position:absolute;
+left:75px;
+width:30px;
+height:180px;
+background:white;
+}
+
+.ribbon-h{
+position:absolute;
+top:75px;
+height:30px;
+width:180px;
+background:white;
+}
+
+@keyframes float{
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* CARTA */
+
+.letter{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%) scale(0);
+width:90%;
+max-width:1000px;
+height:80%;
+background:rgba(255,255,255,.08);
+border:1px solid rgba(255,255,255,.2);
+backdrop-filter:blur(15px);
+border-radius:25px;
+padding:40px;
+color:white;
+overflow:auto;
+transition:2s;
+z-index:30;
+}
+
+.letter.show{
+transform:translate(-50%,-50%) scale(1);
+}
+
+.letter h2{
+text-align:center;
+font-size:3rem;
+margin-bottom:30px;
+}
+
+.letter p{
+line-height:2;
+font-size:1.25rem;
+text-align:center;
+}
+
+/* FRASES */
+
+.phrase{
+position:absolute;
+color:white;
+font-size:1.1rem;
+opacity:0;
+text-shadow:0 0 15px white;
+animation:appear 12s infinite;
+}
+
+@keyframes appear{
+20%{opacity:1;}
+80%{opacity:1;}
+100%{opacity:0;}
+}
+
+/* MENSAJE FINAL */
+
+.final{
+position:absolute;
+bottom:40px;
+width:100%;
+text-align:center;
+font-size:2rem;
+color:white;
+opacity:0;
+transition:3s;
+text-shadow:0 0 20px white;
+}
+
+.showFinal{
+opacity:1;
+}
+
+</style>
+</head>
+<body>
+
+<div class="universe" id="universe"></div>
+
+<div class="cover" id="cover">
+
+<h1>👨‍👦✨ Feliz Primer Día del Padre, IVAN ✨👨‍👦</h1>
+
+<p>
+Para mi querido hermano IVAN.<br><br>
+
+La persona que durante toda mi infancia estuvo ahí para mí,
+mi protector, mi ejemplo y alguien a quien siempre admiraré.<br><br>
+
+Hoy la vida te regala una de las aventuras más hermosas:
+convertirte en papá.<br><br>
+
+Hace apenas un mes llegó tu pequeño bebé y ya puedo ver
+el inmenso amor que sientes por él.<br><br>
+
+IVAN, quiero que sepas que estoy muy orgulloso de ti. 💙
+</p>
+
+<div class="gift" onclick="openGift()">
+
+<div class="lid" id="lid"></div>
+
+<div class="box">
+<div class="ribbon-v"></div>
+<div class="ribbon-h"></div>
+</div>
+
+</div>
+
+<p style="margin-top:25px;">
+🎁 Haz clic en el regalo para abrir tu sorpresa
+</p>
+
+</div>
+
+<div class="letter" id="letter">
+
+<h2>💙 Para Mi Hermano IVAN 💙</h2>
+
+<p>
+
+Querido IVAN:<br><br>
+
+Hoy quiero dedicarte estas palabras desde el corazón.<br><br>
+
+Gracias por haberme cuidado desde que era pequeño.<br>
+Gracias por protegerme cuando lo necesité.<br>
+Gracias por ser ese hermano que siempre estuvo presente.<br><br>
+
+Muchos de mis mejores recuerdos tienen algo en común:
+tú estabas ahí.<br><br>
+
+Siempre te vi como alguien fuerte,
+trabajador,
+noble
+y con un corazón enorme.<br><br>
+
+Y ahora que te veo convertido en papá,
+siento una felicidad inmensa.<br><br>
+
+IVAN, tu bebé tiene la suerte de tener un padre como tú.<br><br>
+
+Sé que le enseñarás los mismos valores que me enseñaste a mí:
+respeto,
+humildad,
+bondad
+y amor por la familia.<br><br>
+
+Hace un mes comenzó una nueva etapa en tu vida,
+una aventura que cambiará tu mundo para siempre.<br><br>
+
+Habrá días cansados,
+noches sin dormir,
+momentos difíciles...<br><br>
+
+Pero también habrá sonrisas,
+abrazos,
+primeras palabras,
+primeros pasos,
+y recuerdos que te acompañarán toda la vida.<br><br>
+
+No tengo ninguna duda de que serás un padre extraordinario.<br><br>
+
+Porque antes de ser un gran papá,
+ya eras una gran persona.<br><br>
+
+Gracias por todos los momentos que compartimos.<br>
+Gracias por cada consejo.<br>
+Gracias por cuidarme cuando era pequeño.<br>
+Gracias por ser mi hermano.<br><br>
+
+IVAN, estoy muy orgulloso de ti.<br><br>
+
+Te quiero muchísimo.<br><br>
+
+❤️ Feliz Primer Día del Padre ❤️<br><br>
+
+Con todo mi cariño,<br>
+Tu hermano.
+
+</p>
+
+</div>
+
+<div class="final" id="final">
+🌌 IVAN, te quiero muchísimo. Gracias por cuidarme desde pequeño. Hoy eres un gran papá y siempre serás mi ejemplo. 💙👨‍👦✨
+</div>
+
+<script>
+
+// CREAR ESTRELLAS
+
+const universe = document.getElementById("universe");
+
+for(let i=0;i<500;i++){
+
+const star=document.createElement("div");
+
+star.className="star";
+
+let size=Math.random()*3+1;
+
+star.style.width=size+"px";
+star.style.height=size+"px";
+
+star.style.left=Math.random()*100+"%";
+star.style.top=Math.random()*100+"%";
+
+star.style.animationDelay=Math.random()*4+"s";
+
+universe.appendChild(star);
+}
+
+// FRASES
+
+const frases=[
+
+"Te quiero mucho, IVAN ❤️",
+"Gracias por cuidarme cuando era pequeño 💙",
+"IVAN, eres un padre increíble 👨‍👦",
+"Tu bebé tiene mucha suerte de tenerte ✨",
+"Siempre serás mi ejemplo 🌟",
+"Estoy orgulloso de ti, IVAN 💙",
+"Gracias por cada consejo ❤️",
+"Tu corazón es enorme 🤍",
+"Mi hermano IVAN, mi héroe 💫",
+"Tu nueva aventura apenas comienza 🚀",
+"Serás un padre extraordinario 👶",
+"Gracias por protegerme siempre 💙",
+"IVAN, nunca cambies ❤️",
+"Tu hijo crecerá admirándote 🌟",
+"Gracias por estar siempre ahí 🤝",
+"Eres una inspiración para mí ✨",
+"Tu familia tiene un gran hombre 💙",
+"Feliz Primer Día del Padre, IVAN 👨‍👦",
+"Tu bebé siempre encontrará amor en ti ❤️",
+"Gracias por todo, hermano 💙"
+
+];
+
+frases.forEach((texto,i)=>{
+
+const p=document.createElement("div");
+
+p.className="phrase";
+p.innerText=texto;
+
+p.style.left=Math.random()*90+"%";
+p.style.top=Math.random()*90+"%";
+
+p.style.animationDelay=(i*1.5)+"s";
+
+universe.appendChild(p);
+
+});
+
+// ABRIR REGALO
+
+function openGift(){
+
+document.getElementById("lid").style.transform =
+"translateY(-250px) rotate(-30deg)";
+
+setTimeout(()=>{
+
+document.getElementById("cover").style.display="none";
+
+document.getElementById("letter")
+.classList.add("show");
+
+setTimeout(()=>{
+
+document.getElementById("final")
+.classList.add("showFinal");
+
+},3000);
+
+},1500);
+
+}
+
+</script>
+
+</body>
+</html>
