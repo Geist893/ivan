@@ -170,6 +170,33 @@ line-height:2;
 font-size:1.25rem;
 text-align:center;
 }
+  .closeLetter{
+
+display:block;
+margin:40px auto 0;
+
+padding:15px 30px;
+
+border:none;
+border-radius:50px;
+
+cursor:pointer;
+
+font-size:1.1rem;
+font-weight:bold;
+
+background:white;
+color:#0b1d4f;
+
+transition:.3s;
+}
+
+.closeLetter:hover{
+
+transform:scale(1.05);
+
+box-shadow:0 0 25px white;
+}
 
 /* FRASES */
 
@@ -315,6 +342,10 @@ Tu hermano.
 
 </p>
 
+<button class="closeLetter" onclick="closeLetter()">
+🌌 Ver todos los mensajes para IVAN
+</button>
+
 </div>
 
 <div class="final" id="final">
@@ -409,6 +440,25 @@ document.getElementById("final")
 .classList.add("showFinal");
 
 },3000);
+
+},1500);
+
+}
+  function closeLetter(){
+
+const letter =
+document.getElementById("letter");
+
+letter.style.transition = "1.5s";
+
+letter.style.opacity = "0";
+
+letter.style.transform =
+"translate(-50%,-50%) scale(0.7) rotateX(30deg)";
+
+setTimeout(()=>{
+
+letter.style.display="none";
 
 },1500);
 
